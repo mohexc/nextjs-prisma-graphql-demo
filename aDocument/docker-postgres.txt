@@ -1,0 +1,41 @@
+01.check version
+    docker --version
+
+02.create image postgres from remote
+    docker pull postgres
+
+03.display list image
+    docker images
+
+04.create container
+    docker run --name some-postgres -e POSTGRES_PASSWORD=banana -d -p 5432:5432 postgres
+        --name
+        -e : eviroment variable
+        -d
+        -p : mapped port container to machaine
+        postgres : name image
+
+05.display container is running
+    docker ps -a
+
+06.execure container
+    docker exec -it some-postgres psql -U postgres
+
+07.postgres command
+    application
+        connect             
+        unconnect
+    database
+        create database     create database <nameDatabase>;
+        list database       \l
+            create database foody
+        access database     \c <nameDatabase>
+            \c foody
+        exit database       \q
+    table
+        list table          \dt
+        create table        create table menu(id int, description text, price int);
+    row
+        create row          insert into menu values(1, 'rice', 1);
+        list row            select * from menu;
+        detail table        \d <tablename>
