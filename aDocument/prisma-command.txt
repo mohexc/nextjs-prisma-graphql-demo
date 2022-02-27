@@ -1,1 +1,3 @@
 npx prisma studio
+
+npm i apollo-server-micro graphql micro-cors
